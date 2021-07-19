@@ -17,7 +17,28 @@
   </head>
   <body>
     
-    <h1>Contenido Aqui</h1>
+    <!-- include summernote css/js -->
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+  <body>
+    <form action="http://localhost:3000/mailing" class="container p-5">
+      <h5>
+        Correos:
+        <input class="w-100 form-control" name="correos" placeholder="Ingrese los correos separados por ',' " />
+      </h5>
+      <h5>Asunto: <input name="asunto" class="form-control" /></h5>
+      <h5>
+        Mensaje: <br /><textarea id="summernote" name="contenido" class="form-control" cols="30" rows="10"></textarea>
+      </h5>
+
+      <button class="btn btn-warning">Enviar correos masivos</button>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        $('#summernote').summernote()
+      })
+    </script>
 
     <!-- Bootsrap -->
 
